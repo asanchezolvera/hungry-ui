@@ -1,0 +1,16 @@
+dist
+coverage
+node_modules
+*.min.js
+*.min.css
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+.angular
+.next
+.nuxt
+.cache
+.output
+.vercel
+.netlify
+storybook-static
