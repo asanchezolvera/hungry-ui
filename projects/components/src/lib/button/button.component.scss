@@ -1,0 +1,227 @@
+@import '../styles/theme.css';
+
+.hungry-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  white-space: nowrap;
+  border: var(--border-width) solid transparent;
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+
+  &:disabled,
+  &--disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &--loading {
+    pointer-events: none;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &--icon-only {
+    padding: var(--space-sm);
+  }
+
+  &__loader {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1em;
+    height: 1em;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &--left {
+      margin-right: var(--space-xs);
+    }
+
+    &--right {
+      margin-left: var(--space-xs);
+    }
+
+    &--only {
+      margin: 0;
+    }
+  }
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  @at-root {
+    // Sizes
+    .hungry-button--small {
+      padding: var(--space-xs) var(--space-sm);
+      font-size: var(--text-sm);
+    }
+
+    .hungry-button--medium {
+      padding: var(--space-sm) var(--space-md);
+      font-size: var(--text-base);
+    }
+
+    .hungry-button--large {
+      padding: var(--space-md) var(--space-lg);
+      font-size: var(--text-lg);
+    }
+
+    // Primary variant
+    .hungry-button--primary {
+      background-color: var(--color-primary-500);
+      color: var(--color-white);
+
+      &:hover:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-primary-600);
+      }
+
+      &:active:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-primary-700);
+      }
+    }
+
+    // Secondary variant
+    .hungry-button--secondary {
+      background-color: var(--color-neutral-100);
+      color: var(--color-neutral-900);
+      border-color: var(--color-neutral-200);
+
+      &:hover:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-200);
+      }
+
+      &:active:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-300);
+      }
+
+      &:focus-visible {
+        outline-color: var(--color-neutral-500);
+      }
+    }
+
+    // Ghost variant
+    .hungry-button--ghost {
+      background-color: transparent;
+      color: var(--color-neutral-700);
+
+      &:hover:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-100);
+      }
+
+      &:active:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-200);
+      }
+
+      &:focus-visible {
+        outline-color: var(--color-neutral-500);
+      }
+    }
+
+    // Link variant
+    .hungry-button--link {
+      background-color: transparent;
+      color: var(--color-primary-500);
+      border: none;
+      padding: 0;
+      border-radius: 0;
+
+      &:hover:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        text-decoration: underline;
+        color: var(--color-primary-600);
+      }
+
+      &:active:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        color: var(--color-primary-700);
+      }
+
+      &:focus-visible {
+        outline-offset: 1px;
+      }
+    }
+
+    // Danger variant
+    .hungry-button--danger {
+      background-color: var(--color-danger-500);
+      color: var(--color-white);
+
+      &:hover:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-danger-600);
+      }
+
+      &:active:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-danger-700);
+      }
+
+      &:focus-visible {
+        outline-color: var(--color-danger-500);
+      }
+    }
+  }
+
+  // Dark mode
+  [data-theme='dark'] & {
+    &--secondary {
+      background-color: var(--color-neutral-800);
+      color: var(--color-neutral-100);
+      border-color: var(--color-neutral-700);
+
+      &:hover:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-700);
+      }
+
+      &:active:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-600);
+      }
+    }
+
+    &--ghost {
+      color: var(--color-neutral-300);
+
+      &:hover:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-800);
+      }
+
+      &:active:not(.hungry-button--disabled):not(.hungry-button--loading) {
+        background-color: var(--color-neutral-700);
+      }
+    }
+  }
+}
+
+// Spinner animation
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}

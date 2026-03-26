@@ -1,0 +1,15 @@
+@if (header()) {
+  <div class="hungry-card__header">
+    <ng-container [ngTemplateOutlet]="header()!"></ng-container>
+  </div>
+}
+
+<div class="hungry-card__content">
+  <ng-content></ng-content>
+</div>
+
+@if (footer()) {
+  <div class="hungry-card__footer">
+    <ng-container [ngTemplateOutlet]="footer()!"></ng-container>
+  </div>
+}

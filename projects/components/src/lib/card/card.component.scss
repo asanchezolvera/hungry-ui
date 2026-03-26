@@ -1,0 +1,116 @@
+@import '../styles/theme.css';
+
+.hungry-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-lg);
+  background-color: var(--color-white);
+  transition: all var(--transition-base);
+
+  [data-theme='dark'] & {
+    background-color: var(--color-neutral-900);
+  }
+
+  &--bordered {
+    border: var(--border-width) solid var(--color-neutral-200);
+
+    [data-theme='dark'] & {
+      border-color: var(--color-neutral-800);
+    }
+  }
+
+  &--elevated {
+    box-shadow: var(--shadow-md);
+
+    &:hover {
+      box-shadow: var(--shadow-lg);
+    }
+  }
+
+  &--clickable {
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary-500);
+      outline-offset: 2px;
+    }
+  }
+
+  &--padding-none {
+    &__header,
+    &__content,
+    &__footer {
+      padding: 0;
+    }
+  }
+
+  &--padding-small {
+    &__header,
+    &__content,
+    &__footer {
+      padding: var(--space-sm);
+    }
+  }
+
+  &--padding-medium {
+    &__header,
+    &__content,
+    &__footer {
+      padding: var(--space-md);
+    }
+  }
+
+  &--padding-large {
+    &__header,
+    &__content,
+    &__footer {
+      padding: var(--space-lg);
+    }
+  }
+
+  // Variants
+  &--outlined {
+    border: var(--border-width) solid var(--color-neutral-300);
+    background-color: transparent;
+
+    [data-theme='dark'] & {
+      border-color: var(--color-neutral-700);
+    }
+  }
+
+  &--filled {
+    background-color: var(--color-neutral-100);
+    border: none;
+
+    [data-theme='dark'] & {
+      background-color: var(--color-neutral-800);
+    }
+  }
+
+  &__header {
+    border-bottom: var(--border-width) solid var(--color-neutral-200);
+    font-weight: 600;
+    color: var(--color-neutral-900);
+
+    [data-theme='dark'] & {
+      border-bottom-color: var(--color-neutral-800);
+      color: var(--color-neutral-100);
+    }
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__footer {
+    border-top: var(--border-width) solid var(--color-neutral-200);
+
+    [data-theme='dark'] & {
+      border-top-color: var(--color-neutral-800);
+    }
+  }
+}

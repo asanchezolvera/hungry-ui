@@ -1,0 +1,101 @@
+@import '../styles/theme.css';
+
+.hungry-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 9999px;
+
+  &__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // Sizes
+  &--small {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--text-xs);
+  }
+
+  &--medium {
+    padding: var(--space-xs) var(--space-md);
+    font-size: var(--text-sm);
+  }
+
+  &--large {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--text-base);
+  }
+
+  // Dot variant
+  &--dot {
+    padding: 0;
+    width: var(--space-md);
+    height: var(--space-md);
+
+    &.hungry-badge--small {
+      width: var(--space-sm);
+      height: var(--space-sm);
+    }
+
+    &.hungry-badge--large {
+      width: var(--space-lg);
+      height: var(--space-lg);
+    }
+  }
+
+  // Variants
+  &--default {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+
+    [data-theme='dark'] & {
+      background-color: var(--color-neutral-800);
+      color: var(--color-neutral-100);
+    }
+  }
+
+  &--primary {
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-900);
+
+    [data-theme='dark'] & {
+      background-color: var(--color-primary-900);
+      color: var(--color-primary-100);
+    }
+  }
+
+  &--success {
+    background-color: var(--color-success-100);
+    color: var(--color-success-900);
+
+    [data-theme='dark'] & {
+      background-color: var(--color-success-900);
+      color: var(--color-success-100);
+    }
+  }
+
+  &--warning {
+    background-color: var(--color-warning-100);
+    color: var(--color-warning-900);
+
+    [data-theme='dark'] & {
+      background-color: var(--color-warning-900);
+      color: var(--color-warning-100);
+    }
+  }
+
+  &--danger {
+    background-color: var(--color-danger-100);
+    color: var(--color-danger-900);
+
+    [data-theme='dark'] & {
+      background-color: var(--color-danger-900);
+      color: var(--color-danger-100);
+    }
+  }
+}

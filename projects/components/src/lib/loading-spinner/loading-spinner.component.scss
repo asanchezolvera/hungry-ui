@@ -1,0 +1,60 @@
+@import '../styles/theme.css';
+
+.hungry-loading-spinner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &__wrapper {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__svg {
+    animation: spin 1s linear infinite;
+    color: var(--color-primary-500);
+
+    // Sizes
+    &.hungry-loading-spinner--small {
+      width: var(--space-md);
+      height: var(--space-md);
+    }
+
+    &.hungry-loading-spinner--medium {
+      width: var(--space-lg);
+      height: var(--space-lg);
+    }
+
+    &.hungry-loading-spinner--large {
+      width: var(--space-xl);
+      height: var(--space-xl);
+    }
+  }
+
+  @at-root {
+    .hungry-loading-spinner--small &__svg {
+      width: var(--space-md);
+      height: var(--space-md);
+    }
+
+    .hungry-loading-spinner--medium &__svg {
+      width: var(--space-lg);
+      height: var(--space-lg);
+    }
+
+    .hungry-loading-spinner--large &__svg {
+      width: var(--space-xl);
+      height: var(--space-xl);
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

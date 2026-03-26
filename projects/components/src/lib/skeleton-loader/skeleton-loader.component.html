@@ -1,0 +1,13 @@
+@if (variant() === 'text') {
+  <div class="hungry-skeleton-loader__text">
+    @for (line of lineNumbers(); track $index) {
+      <div
+        class="hungry-skeleton-loader__line"
+        [ngStyle]="computedStyles()"
+        [style.width]="$index === lines() - 1 && !width() ? '60%' : null"
+      ></div>
+    }
+  </div>
+} @else {
+  <div class="hungry-skeleton-loader__shape" [ngStyle]="computedStyles()"></div>
+}

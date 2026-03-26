@@ -1,0 +1,48 @@
+@import '../styles/theme.css';
+
+.hungry-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  vertical-align: middle;
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  &--small {
+    width: var(--space-md);
+    height: var(--space-md);
+  }
+
+  &--medium {
+    width: var(--space-lg);
+    height: var(--space-lg);
+  }
+
+  &--large {
+    width: var(--space-xl);
+    height: var(--space-xl);
+  }
+
+  &--xlarge {
+    width: var(--space-2xl);
+    height: var(--space-2xl);
+  }
+
+  &--spin {
+    animation: spin 1s linear infinite;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
